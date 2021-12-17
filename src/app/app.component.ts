@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'coming-soon';
-
-  mainText = "Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals."
+  
+  // content for main text and input placeholder
+  mainTxt = "Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals."
   inputTxt = "Email Address";
 
+  // email validation
+  newsletterForm = new FormGroup({
+    email: new FormControl('',[Validators.required, Validators.email])
+  })
 
-  onFormSubmit(){
-      console.log('Formularz wysłan')
-  }
+  // getting the email from the form
+  get email(){
+    return this.newsletterForm.get('email');
+  } 
+
+  // form submit function
+  submitEmail(){
+    console.log(this.newsletterForm.value);
+    alert("You're successfully subscribed to our newsletter 😁")
+    }
 }
