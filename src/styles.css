@@ -26,6 +26,6 @@ body{
     min-height: 100vh;
 }
 
-.grid-col-span2{
+.grid-col-span-2{
     -ms-grid-column-span: 2;
 }

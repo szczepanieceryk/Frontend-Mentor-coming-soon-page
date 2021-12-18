@@ -24,7 +24,6 @@ export class AppComponent {
 
   // form submit function
   submitEmail(){
-    console.log(this.newsletterForm.value);
-    alert("You're successfully subscribed to our newsletter 😁")
+    alert("You're successfully subscribed to our newsletter 😁");
     }
 }
